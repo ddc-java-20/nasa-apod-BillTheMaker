@@ -43,8 +43,9 @@ android {
             "de.mannodermaus.junit5.AndroidJUnit5Builder"
 
         resValue("string", "app_name", project.property("appName") as String)
-        resValue("string", "api_key", getLocalProperty("api_key") ?: "")
         resValue("string", "base_url", project.property("baseUrl") as String)
+        resValue("string", "api_key", getLocalProperty("api_key") ?: "")
+        resValue("string", "log_level", getLocalProperty("log_level") ?: "none")
 
         javaCompileOptions {
             annotationProcessorOptions {
