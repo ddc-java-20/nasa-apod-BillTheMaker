@@ -13,9 +13,11 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="AllowBackup,DataExtractionRules">
+
     <activity
       android:exported="true"
       android:name=".controller.MainActivity">
+
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
