@@ -138,6 +138,9 @@ dependencies {
     // OkHttp logging dependency
     implementation(libs.logging.interceptor)
 
+    // Kizitonwose calender widget library
+    implementation(libs.kizitonwose.calendar)
+
     // Libraries for JVM-based testing.
     testImplementation(libs.junit.api)
     testImplementation(libs.junit.params)
