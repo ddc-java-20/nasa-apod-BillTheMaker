@@ -45,18 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupViewModel() {
     viewModel = new ViewModelProvider(this).get(ApodViewModel.class);
-    viewModel
-        .getApod()
-        .observe(this, (apod) -> {
-          if (apod != null) {
-            // TODO: 2/26/2025 Grab image HOW? and put in ImageView widget.
-            picasso
-                .load(apod.getLowDefUrl().toString())
-                .into(binding.image);
-              }
-            });
 
-    viewModel.setToday();
   }
 
 }
