@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
   private ActivityMainBinding binding;
   private ApodViewModel viewModel;
 
-  @Inject
-  Picasso picasso;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupViewModel() {
     viewModel = new ViewModelProvider(this).get(ApodViewModel.class);
-
   }
 
 }

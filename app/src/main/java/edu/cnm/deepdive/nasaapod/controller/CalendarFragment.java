@@ -29,7 +29,6 @@ public class CalendarFragment extends Fragment {
   public View onCreateView(@NonNull LayoutInflater inflater,
       @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     binding = FragmentCalendarBinding.inflate(inflater, container, false);
-    // TODO: 2025-02-28 Initialize UI.
     return binding.getRoot();
   }
 

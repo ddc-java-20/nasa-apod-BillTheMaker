@@ -42,7 +42,7 @@ shadow = "8.1.1"
 picasso = "2.8"
 schema-parser = "1.0.0"
 commons-rng-simple = "1.5"
-kizitonwose-calendar="2.6.2"
+kizitonwose-calendar = "2.6.2"
 
 # Test plugin & library versions
 junit = "5.11.4"

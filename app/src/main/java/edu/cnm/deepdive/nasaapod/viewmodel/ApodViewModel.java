@@ -10,6 +10,9 @@ import edu.cnm.deepdive.nasaapod.model.entity.Apod;
 import edu.cnm.deepdive.nasaapod.service.ApodRepository;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import javax.inject.Inject;
 
 @HiltViewModel
@@ -35,6 +38,12 @@ public class ApodViewModel extends ViewModel {
   public LiveData<List<Apod>> getApods() {return apods;}
 
   public LiveData<Apod> getApod() {return repository.get();}
+
+  public LiveData<Map<LocalDate, Apod>> getApodMap() {
+    return Transformations.map(apods, (apodlist) -> apodlist
+        .stream()
+        .collect(Collectors.toMap(Apod::getDate, Function.identity())));
+  }
 
   @SuppressLint("CheckResult")
   public void setRange(LocalDate startDate, LocalDate endDate) {
