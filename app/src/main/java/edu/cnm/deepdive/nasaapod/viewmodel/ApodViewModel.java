@@ -32,9 +32,9 @@ public class ApodViewModel extends ViewModel {
     this.repository = repository;
     yearMonth = new MutableLiveData<>(YearMonth.now());
     apodID = new MutableLiveData<>();
+    throwable = new MutableLiveData<>();
     apods = Transformations.switchMap(Transformations.distinctUntilChanged(yearMonth),
         this::transformYearMonthToQuery);
-    throwable = new MutableLiveData<>();
   }
 
   public LiveData<List<Apod>> getApods() {return apods;}
@@ -55,6 +55,10 @@ public class ApodViewModel extends ViewModel {
     return yearMonth;
   }
 
+  public void setYearMonth(YearMonth yearMonth) {
+    this.yearMonth.setValue(yearMonth);
+  }
+
   @SuppressLint("CheckResult")
   private LiveData<List<Apod>> transformYearMonthToQuery(YearMonth yearMonth) {
     LocalDate startDate = yearMonth.minusMonths(1).atDay(1);
@@ -65,7 +69,7 @@ public class ApodViewModel extends ViewModel {
         .fetch(startDate, endDate)
         .subscribe(
             () -> {},
-            throwable::setValue
+            this::postThrowable
         );
     return repository.get(startDate, endDate);
   }

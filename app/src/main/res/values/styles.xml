@@ -28,7 +28,7 @@
 
   <style name="CalendarTextAppearance" parent="TextAppearance.Material3.BodyLarge"/>
 
-  <style name="CalendarTextAppearance" parent="TextAppearance.Material3.TitleLarge"/>
+  <style name="CalendarTextAppearance.Month" parent="TextAppearance.Material3.TitleLarge"/>
 
   <style name="CalendarTextAppearance.DayHeader">
     <item name="android:textStyle">italic</item>

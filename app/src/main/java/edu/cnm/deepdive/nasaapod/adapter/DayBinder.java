@@ -96,6 +96,7 @@ public class DayBinder implements MonthDayBinder<ViewContainer> {
             mediaTypes[apod.getMediaType().ordinal()], apod.getTitle().strip()));
       } else {
         this.apod = null;
+        dayText.setClickable(false);
         dayText.setFocusable(false);
         dayText.setSoundEffectsEnabled(false);
         dayText.setOnClickListener(NO_OP_LISTENER);
