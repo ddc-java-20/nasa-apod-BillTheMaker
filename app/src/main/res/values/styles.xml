@@ -22,7 +22,7 @@
   </style>
 
 
-  <style name="CalendarDat">
+  <style name="CalendarDay">
     <item name="android:background">?android:selectableItemBackgroundBorderless</item>
   </style>
 
