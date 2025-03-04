@@ -14,6 +14,7 @@ import com.kizitonwose.calendar.core.CalendarMonth;
 import dagger.hilt.android.AndroidEntryPoint;
 import edu.cnm.deepdive.nasaapod.R;
 import edu.cnm.deepdive.nasaapod.adapter.DayBinder;
+import edu.cnm.deepdive.nasaapod.adapter.HeaderBinder;
 import edu.cnm.deepdive.nasaapod.databinding.FragmentCalendarBinding;
 import edu.cnm.deepdive.nasaapod.model.entity.Apod;
 import edu.cnm.deepdive.nasaapod.viewmodel.ApodViewModel;
@@ -34,7 +35,8 @@ public class CalendarFragment extends Fragment {
   
   @Inject
   DayBinder dayBinder;
-  // TODO: 3/3/2025 Add injected header binder  
+  @Inject
+  HeaderBinder headerBinder;
 
   private FragmentCalendarBinding binding;
   private ApodViewModel viewModel;
@@ -54,7 +56,7 @@ public class CalendarFragment extends Fragment {
         Log.d(TAG, apod.getDate().toString())));
     binding = FragmentCalendarBinding.inflate(inflater, container, false);
     binding.calendar.setDayBinder(dayBinder);
-    // TODO: 3/3/2025 Set month header binding on calendar. 
+    binding.calendar.setMonthHeaderBinder(headerBinder);
     binding.calendar.setup(firstApodMonth, currentMonth, firstDayOfWeek);
     binding.calendar.setMonthScrollListener(this::handleMonthScroll);
     return binding.getRoot();
